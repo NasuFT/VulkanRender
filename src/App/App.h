@@ -32,6 +32,8 @@ private:
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+    VkDevice device;
+    VkQueue graphicsQueue;
     
     const uint32_t WIDTH = 1280;
     const uint32_t HEIGHT = 720;
@@ -53,6 +55,7 @@ private:
     void createInstance();
     void setupDebugMessenger();
     void pickPhysicalDevice();
+    void createLogicalDevice();
 
     bool checkValidationLayerSupport();
     std::vector<const char*> getRequiredExtensions();
